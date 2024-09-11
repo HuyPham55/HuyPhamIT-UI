@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "flowbite": "^2.5.1",
     "vue": "^3.4.37"
   },
   "devDependencies": {
