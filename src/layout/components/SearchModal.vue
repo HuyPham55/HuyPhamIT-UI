@@ -17,7 +17,8 @@ const closeModal = function () {
 
 <template>
   <!-- Main modal -->
-  <div id="default-modal" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+  <div id="default-modal" aria-hidden="true"
+       class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full p-4 lg:pt-16"
        tabindex="-1">
     <div class="relative w-full max-w-lg max-h-full">
       <!-- Modal content -->
