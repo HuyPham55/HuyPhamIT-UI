@@ -1,12 +1,10 @@
 <script lang="ts" setup>
 
 import Pagination from "./components/Pagination.vue";
-import {onMounted} from "vue";
-import {initFlowbite} from "flowbite";
 
-onMounted(() => {
-  initFlowbite();
-})
+// onMounted(() => {
+//   initFlowbite();
+// })
 </script>
 
 <template>

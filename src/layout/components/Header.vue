@@ -1,11 +1,25 @@
 <script setup>
 import {computed} from "vue";
-import SearchForm from "./components/SearchForm.vue";
 import SwitchThemeButton from "./components/SwitchThemeButton.vue";
+import SearchButton from "./components/SearchButton.vue";
+import SearchInput from "./components/SearchInput.vue";
 
+/*
+Disable search button that toggles search input on mobile devices, even it's on mobile
+Directly related to showSearchButton
+ */
 let showSearchButton = computed(() => {
-  return 0; //disable search button, even it's on mobile
+  return 0;
 })
+
+/*
+Search input on mobile devices that shows when user click on hamburger menu
+Directly related to showSearchButton
+ */
+
+let showMobileSearchInput = 0;
+
+let showSearchForm = 0; //Show search input on header that always shows on desktop devices, automatically hidden on mobile device
 </script>
 <template>
   <header
@@ -26,7 +40,8 @@ let showSearchButton = computed(() => {
           </svg>
           <span class="sr-only">Search</span>
         </button>
-        <SearchForm/>
+        <SearchInput v-if="showSearchForm"/>
+        <SearchButton/>
         <SwitchThemeButton/>
         <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 type="button">
@@ -45,7 +60,7 @@ let showSearchButton = computed(() => {
         </button>
       </div>
       <div id="navbar-sticky" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
-        <div class="relative mt-3 md:hidden">
+        <div v-if="showMobileSearchInput" class="relative mt-3 md:hidden">
           <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
             <svg aria-hidden="true" class="w-4 h-4 text-gray-500 dark:text-gray-400"
                  fill="none" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
