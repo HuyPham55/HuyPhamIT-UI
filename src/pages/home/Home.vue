@@ -1,7 +1,7 @@
 <template>
   <main>
     <Hero/>
-    <Featured/>
+    <FeaturedList/>
     <NewestPosts/>
     <Newsletter/>
   </main>
@@ -14,6 +14,6 @@ main {
 <script lang="ts" setup>
 import Newsletter from "./components/Newsletter.vue";
 import Hero from "./components/Hero.vue";
-import Featured from "./components/Featured.vue";
 import NewestPosts from "./components/NewestPosts.vue";
+import FeaturedList from "./components/FeaturedList.vue";
 </script>

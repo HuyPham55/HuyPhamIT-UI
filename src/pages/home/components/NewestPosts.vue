@@ -11,6 +11,14 @@ import Pagination from "./components/Pagination.vue";
   <section class="bg-white py-8 antialiased dark:bg-gray-900 md:py-16">
     <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
       <div class="mx-auto max-w-5xl">
+
+        <div class="mx-auto max-w-screen-sm text-center mb-8">
+          <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our
+            Blog</h2>
+          <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">We use an agile approach to test assumptions
+            and connect with the needs of your audience early and often.</p>
+        </div>
+
         <div class="gap-4 sm:flex sm:items-center sm:justify-between">
           <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">My warranties</h2>
           <div class="mt-6 flex items-center space-x-4 sm:mt-0">
