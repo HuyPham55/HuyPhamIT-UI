@@ -1,28 +1,80 @@
 <script lang="ts" setup>
+import {onMounted} from "vue";
+import {initFlowbite} from 'flowbite'
 
+// initialize components based on data attribute selectors
+onMounted(() => {
+  initFlowbite();
+})
 </script>
 
 <template>
   <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
-    <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
+    <div
+        class="flex justify-between p-4 mx-2 lg:mx-auto max-w-screen-xl lg:p-10 dark:bg-gray-800 rounded-lg lg:rounded gap-8 flex-col lg:flex-row">
       <article
-          class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+          class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert xl:max-w-4xl order-1">
         <header class="mb-4 lg:mb-6 not-format">
-          <address class="flex items-center mb-6 not-italic">
-            <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
-              <img alt="Jese Leos"
-                   class="mr-4 w-16 h-16 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg">
-              <div>
-                <a class="text-xl font-bold text-gray-900 dark:text-white" href="#" rel="author">Jese Leos</a>
-                <p class="text-base text-gray-500 dark:text-gray-400">Graphic Designer, educator & CEO Flowbite</p>
-                <p class="text-base text-gray-500 dark:text-gray-400">
-                  <time datetime="2022-02-08" pubdate title="February 8th, 2022">Feb. 8, 2022</time>
-                </p>
-              </div>
+          <div class="flex lg:items-center flex-col lg:flex-row justify-between">
+            <div class="flex items-center mb-2 lg:mb-0">
+              <span>By &nbsp;</span>
+              <a class="font-bold dark:text-white hover:underline" href="#">Jese Leos</a>
+              <span class="ml-2 w-3 h-3 bg-gray-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+              <span class="ml-2">
+                <time class="">August 3, 2022, 2:20am EDT</time>
+              </span>
             </div>
-          </address>
+            <aside class="mb-2 lg:mb-0">
+              <div class="">
+                <button class="transition hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-lg inline-flex"
+                        data-popover-target="popover-default">
+                  <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 8 19"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd"
+                          d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+                          fill-rule="evenodd"></path>
+                  </svg>
+                </button>
+
+                <div id="popover-default" class="absolute z-10 invisible inline-block text-sm text-white transition-opacity duration-300 bg-gray-800 rounded-lg shadow opacity-0 dark:text-gray-200 dark:bg-gray-700" data-popover
+                     role="tooltip">
+                  <div class="px-3 py-2">
+                    <h3 class="font-semibold">
+                      Share on Facebook
+                    </h3>
+                  </div>
+                  <div data-popper-arrow></div>
+                </div>
+
+                <button class="transition hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-lg inline-flex">
+                  <svg aria-hidden="true" class="w-5 h-5" fill="none" viewBox="0 0 14 20"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <path d="m13 19-6-5-6 5V2a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="2"></path>
+                  </svg>
+                </button>
+
+                <button class="transition hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-lg inline-flex">
+                  <svg aria-hidden="true" class="w-5 h-5" fill="none" viewBox="0 0 19 19"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.013 7.962a3.519 3.519 0 0 0-4.975 0l-3.554 3.554a3.518 3.518 0 0 0 4.975 4.975l.461-.46m-.461-4.515a3.518 3.518 0 0 0 4.975 0l3.553-3.554a3.518 3.518 0 0 0-4.974-4.975L10.3 3.7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="2"></path>
+                  </svg>
+                </button>
+                <button class="transition hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-lg inline-flex">
+                  <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 3"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"></path>
+                  </svg>
+                </button>
+
+              </div>
+            </aside>
+          </div>
           <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Best
-            practices for successful prototypes</h1>
+            practices for successful prototypes
+          </h1>
         </header>
         <p class="lead">Flowbite is an open-source library of UI components built with the utility-first
           classes from Tailwind CSS. It also includes interactive elements such as dropdowns, modals,
@@ -110,20 +162,20 @@
           Typefaces with serifs are called serif typefaces. Serif fonts are classified as one of the
           following:</p>
         <pre><code class="language-html">&lt;dl class="grid grid-cols-2 gap-8 max-w-screen-md text-gray-900 sm:grid-cols-3 dark:text-white"&gt;
-&lt;div class="flex flex-col justify-center items-center"&gt;
-  &lt;dt class="mb-2 text-3xl font-extrabold"&gt;73M+&lt;/dt&gt;
-  &lt;dd class="text-lg font-normal text-gray-500 dark:text-gray-400"&gt;developers&lt;/dd&gt;
-&lt;/div&gt;
-&lt;div class="flex flex-col justify-center items-center"&gt;
-  &lt;dt class="mb-2 text-3xl font-extrabold"&gt;1B+&lt;/dt&gt;
-  &lt;dd class="text-lg font-normal text-gray-500 dark:text-gray-400"&gt;contributors&lt;/dd&gt;
-&lt;/div&gt;
-&lt;div class="flex flex-col justify-center items-center"&gt;
-  &lt;dt class="mb-2 text-3xl font-extrabold"&gt;4M+&lt;/dt&gt;
-  &lt;dd class="text-lg font-normal text-gray-500 dark:text-gray-400"&gt;organizations&lt;/dd&gt;
-&lt;/div&gt;
-&lt;/dl&gt;
-</code></pre>
+          &lt;div class="flex flex-col justify-center items-center"&gt;
+          &lt;dt class="mb-2 text-3xl font-extrabold"&gt;73M+&lt;/dt&gt;
+          &lt;dd class="text-lg font-normal text-gray-500 dark:text-gray-400"&gt;developers&lt;/dd&gt;
+          &lt;/div&gt;
+          &lt;div class="flex flex-col justify-center items-center"&gt;
+          &lt;dt class="mb-2 text-3xl font-extrabold"&gt;1B+&lt;/dt&gt;
+          &lt;dd class="text-lg font-normal text-gray-500 dark:text-gray-400"&gt;contributors&lt;/dd&gt;
+          &lt;/div&gt;
+          &lt;div class="flex flex-col justify-center items-center"&gt;
+          &lt;dt class="mb-2 text-3xl font-extrabold"&gt;4M+&lt;/dt&gt;
+          &lt;dd class="text-lg font-normal text-gray-500 dark:text-gray-400"&gt;organizations&lt;/dd&gt;
+          &lt;/div&gt;
+          &lt;/dl&gt;
+        </code></pre>
         <h4>Table example</h4>
         <p>A serif is a small shape or projection that appears at the beginning or end of a stroke on a letter.
         </p>
@@ -186,6 +238,22 @@
         <p>And there you have it! Everything you need to design and share prototypes — right in Flowbite Figma.
         </p>
         <section class="not-format">
+          <address class="flex items-center mb-6 not-italic">
+            <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+              <img alt="Jese Leos"
+                   class="mr-4 w-16 h-16 rounded-full"
+                   src="https://flowbite.com/docs/images/people/profile-picture-2.jpg">
+              <div>
+                <a class="text-xl font-bold text-gray-900 dark:text-white" href="#" rel="author">Jese Leos</a>
+                <p class="text-base text-gray-500 dark:text-gray-400">Graphic Designer, educator & CEO Flowbite</p>
+                <p class="text-base text-gray-500 dark:text-gray-400">
+                  <time datetime="2022-02-08" pubdate title="February 8th, 2022">Feb. 8, 2022</time>
+                </p>
+              </div>
+            </div>
+          </address>
+        </section>
+        <section class="not-format">
           <div class="flex justify-between items-center mb-6">
             <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Discussion (20)</h2>
           </div>
@@ -193,12 +261,14 @@
             <div
                 class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
               <label class="sr-only" for="comment">Your comment</label>
-              <textarea id="comment" class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
+              <textarea id="comment"
+                        class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
                         placeholder="Write a comment..."
                         required rows="6"></textarea>
             </div>
-            <button class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800"
-                    type="submit">
+            <button
+                class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800"
+                type="submit">
               Post comment
             </button>
           </form>
@@ -215,7 +285,8 @@
                   </time>
                 </p>
               </div>
-              <button id="dropdownComment1Button" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:text-gray-400 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              <button id="dropdownComment1Button"
+                      class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:text-gray-400 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                       data-dropdown-toggle="dropdownComment1"
                       type="button">
                 <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 16 3"
@@ -273,7 +344,8 @@
                   </time>
                 </p>
               </div>
-              <button id="dropdownComment2Button" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:text-gray-400 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              <button id="dropdownComment2Button"
+                      class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:text-gray-400 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                       data-dropdown-toggle="dropdownComment2"
                       type="button">
                 <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 16 3"
@@ -329,7 +401,8 @@
                   </time>
                 </p>
               </div>
-              <button id="dropdownComment3Button" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:text-gray-400 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              <button id="dropdownComment3Button"
+                      class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:text-gray-400 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                       data-dropdown-toggle="dropdownComment3"
                       type="button">
                 <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 16 3"
@@ -386,7 +459,8 @@
                   </time>
                 </p>
               </div>
-              <button id="dropdownComment4Button" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:text-gray-400 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              <button id="dropdownComment4Button"
+                      class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-500 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:text-gray-400 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                       data-dropdown-toggle="dropdownComment4"
                       type="button">
                 <svg aria-hidden="true" class="w-4 h-4" fill="currentColor" viewBox="0 0 16 3"
@@ -431,6 +505,120 @@
           </article>
         </section>
       </article>
+      <aside class="w-full xl:max-w-xs">
+        <div class="lg:sticky lg:top-28">
+          <div class="mb-8">
+            <h3 class="dark:text-white font-bold uppercase mb-4">
+              Recommended topics
+            </h3>
+            <div class="flex flex-wrap gap-3">
+              <a class="bg-primary-100 hover:bg-primary-200 transition text-primary-800 dark:bg-primary-200 dark:hover:bg-primary-100 dark:text-primary-800 px-2 py-0.5 rounded"
+                 href="#">
+                Technology
+              </a>
+              <a class="bg-primary-100 hover:bg-primary-200 transition text-primary-800 dark:bg-primary-200 dark:hover:bg-primary-100 dark:text-primary-800 px-2 py-0.5 rounded"
+                 href="#">
+                Money
+              </a>
+              <a class="bg-primary-100 hover:bg-primary-200 transition text-primary-800 dark:bg-primary-200 dark:hover:bg-primary-100 dark:text-primary-800 px-2 py-0.5 rounded"
+                 href="#">
+                Productivity
+              </a>
+              <a class="bg-primary-100 hover:bg-primary-200 transition text-primary-800 dark:bg-primary-200 dark:hover:bg-primary-100 dark:text-primary-800 px-2 py-0.5 rounded"
+                 href="#">
+                Psychology
+              </a>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <div class="flex justify-between mb-2 pb-2 items-center border-b border-gray-900 dark:border-white">
+              <div class="flex place-content-center">
+                <a href="#">
+                  <h3 class="dark:text-white font-bold uppercase">
+                    Threads
+                  </h3>
+                </a>
+                <button type="button">
+                  <svg aria-hidden="true" class="w-4 h-4 ms-2 text-gray-400 hover:text-gray-500" fill="currentColor"
+                       viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+                          fill-rule="evenodd"></path>
+                  </svg>
+                  <span class="sr-only">Show information</span>
+                </button>
+              </div>
+              <button
+                  class="transition text-gray-500 dark:text-white dark:hover:text-primary-500 hover:text-primary-400 p-2 aspect-square rounded-full hover:rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 flex place-content">
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+            <ul>
+              <li class="pb-2 border-b border-gray-300 dark:border-gray-700 mb-2">
+                <a href="#">
+                  <h4 class="dark:text-gray-400 mb-2 text-justify">
+                    Over the past year, Volosoft has undergone changes.
+                  </h4>
+                </a>
+                <div class="flex -space-x-4 rtl:space-x-reverse">
+                  <img alt=""
+                       class="w-8 h-8 border-1 border-white rounded-full dark:border-gray-800" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg">
+                  <img alt=""
+                       class="w-8 h-8 border-1 border-white rounded-full dark:border-gray-800" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg">
+                  <img alt=""
+                       class="w-8 h-8 border-1 border-white rounded-full dark:border-gray-800" src="https://flowbite.com/docs/images/people/profile-picture-3.jpg">
+                  <a class="flex items-center justify-center w-8 h-8 text-xs font-medium text-white bg-gray-700 border-2 border-white rounded-full hover:bg-gray-600 dark:border-gray-800"
+                     href="#">+99</a>
+                </div>
+              </li>
+
+              <li class="pb-2 border-b border-gray-300 dark:border-gray-700 mb-2">
+                <a href="#">
+                  <h4 class="dark:text-gray-400 mb-2 text-justify">
+                    Over the past year, Volosoft has undergone changes.
+                  </h4>
+                </a>
+                <div class="flex -space-x-4 rtl:space-x-reverse">
+                  <img alt=""
+                       class="w-8 h-8 border-1 border-white rounded-full dark:border-gray-800" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg">
+                  <img alt=""
+                       class="w-8 h-8 border-1 border-white rounded-full dark:border-gray-800" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg">
+                </div>
+              </li>
+
+              <li class="pb-4 border-b border-gray-900 dark:border-white">
+                <a href="#">
+                  <h4 class="dark:text-gray-400 mb-2 text-justify">
+                    The article covers the essentials, challenges, myths and stages the UX designer should consider
+                    while
+                    creating the design strategy.
+                  </h4>
+                </a>
+                <div class="flex -space-x-4 rtl:space-x-reverse">
+                  <img alt=""
+                       class="w-8 h-8 border-1 border-white rounded-full dark:border-gray-800" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg">
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mb-8">
+            <h3 class="dark:text-white font-bold uppercase mb-2">
+              Flowbite News morning headlines
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400 mb-4 text-justify">
+              Get all the stories you need-to-know from the most powerful name in news delivered first thing every
+              morning
+              to your inbox
+            </p>
+            <button
+                class="transition text-white px-5 py-3 rounded-lg w-full font-semibold bg-primary-700 hover:bg-primary-800 dark:bg-primary-600 dark:hover:bg-primary-700">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </aside>
     </div>
   </main>
 
