@@ -6,6 +6,7 @@ const routes: Array<any> = [
     {
         path: '/',
         component: Home,
+        name: 'home',
     },
     {
         path: '/post-detail', //Route paths should start with a "/": "post-detail" should be "/post-detail"

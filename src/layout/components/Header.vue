@@ -25,10 +25,10 @@ let showSearchForm = 0; //Show search input on header that always shows on deskt
   <header
       class="bg-white dark:bg-gray-900 sticky w-full z-20 top-0 start-0 border-b border-blue-700 dark:border-blue-500 md:shadow">
     <nav class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a class="flex items-center space-x-3 rtl:space-x-reverse" href="https://flowbite.com/">
+      <router-link :to="{name:'home'}" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img alt="Flowbite Logo" class="h-8" src="https://flowbite.com/docs/images/logo.svg">
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-      </a>
+      </router-link>
       <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse gap-2">
         <button v-if="showSearchButton" aria-controls="navbar-sticky" aria-expanded="false"
                 class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1" data-collapse-toggle="navbar-sticky"
