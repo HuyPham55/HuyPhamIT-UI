@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 
-import Pagination from "./components/Pagination.vue";
+import Pagination from "@/pages/home/components/components/Pagination.vue";
 
 // onMounted(() => {
 //   initFlowbite();

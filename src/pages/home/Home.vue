@@ -12,8 +12,8 @@ main {
 }
 </style>
 <script lang="ts" setup>
-import Newsletter from "./components/Newsletter.vue";
-import Hero from "./components/Hero.vue";
-import NewestPosts from "./components/NewestPosts.vue";
-import FeaturedList from "./components/FeaturedList.vue";
+import Newsletter from "@/pages/home/components/Newsletter.vue";
+import Hero from "@/pages/home/components/Hero.vue";
+import NewestPosts from "@/pages/home/components/NewestPosts.vue";
+import FeaturedList from "@/pages/home/components/FeaturedList.vue";
 </script>

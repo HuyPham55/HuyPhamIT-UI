@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 
-import {useEventBusStore} from "../../../stores/eventBus.ts";
+import {useEventBusStore} from "@/stores/eventBus.ts";
 
 const eventBus = useEventBusStore();
 

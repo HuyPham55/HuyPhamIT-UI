@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import {computed} from "vue";
-import SwitchThemeButton from "./components/SwitchThemeButton.vue";
-import SearchButton from "./components/SearchButton.vue";
-import SearchInput from "./components/SearchInput.vue";
+import SwitchThemeButton from "@/layout/components/components/SwitchThemeButton.vue";
+import SearchButton from "@/layout/components/components/SearchButton.vue";
+import SearchInput from "@/layout/components/components/SearchInput.vue";
 
 /*
 Disable search button that toggles search input on mobile devices, even it's on mobile

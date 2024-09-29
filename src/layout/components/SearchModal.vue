@@ -7,7 +7,7 @@
 
 import {InstanceOptions, Modal, ModalOptions} from "flowbite";
 import {onMounted, ref} from "vue";
-import {useEventBusStore} from "../../stores/eventBus.ts";
+import {useEventBusStore} from "@/stores/eventBus.ts";
 
 const _modal = ref();
 

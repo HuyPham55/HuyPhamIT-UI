@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import Header from './components/Header.vue';
-import Footer from './components/Footer.vue';
-import SearchModal from "./components/SearchModal.vue";
+import Header from "@/layout/components/Header.vue";
+import Footer from "@/layout/components/Footer.vue";
+import SearchModal from "@/layout/components/SearchModal.vue";
 </script>
 <template>
   <SearchModal/>

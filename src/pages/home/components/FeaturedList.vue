@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import FeaturedItem from "./components/FeaturedItem.vue";
+import FeaturedItem from "@/pages/home/components/components/FeaturedItem.vue";
 </script>
 
 <template>
