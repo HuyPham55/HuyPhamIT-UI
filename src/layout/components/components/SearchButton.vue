@@ -1,42 +1,19 @@
 <script lang="ts" setup>
-import {onMounted, onUpdated, ref} from "vue";
-import {InstanceOptions, Modal, ModalOptions} from "flowbite";
 
-const _modal = ref();
+import {useEventBusStore} from "../../../stores/eventBus.ts";
+
+const eventBus = useEventBusStore();
+
 const handlerClick = function () {
   toggleSearchForm()
 }
 
 const toggleSearchForm = function () {
-  _modal.value.toggle();
+  eventBus.emit('openSearchModal');
 }
 
-// options with default values
-const options: ModalOptions = {
-  placement: "top-center",
-  backdrop: 'dynamic',
-  backdropClasses:
-      'bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-40',
-  closable: true,
-}
 
-// instance options object
-const instanceOptions: InstanceOptions = {
-  id: 'modalEl',
-  override: true
-};
 
-const initialize = function () {
-  const $targetEl = document.getElementById('default-modal');
-  if ($targetEl) {
-    _modal.value = new Modal($targetEl, options, instanceOptions);
-  }
-}
-onMounted(initialize)
-
-onUpdated(() => {
-  initialize();
-})
 </script>
 
 <template>
