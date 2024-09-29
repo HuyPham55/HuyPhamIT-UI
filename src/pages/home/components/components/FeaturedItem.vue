@@ -5,12 +5,12 @@ import {nextTick, ref} from "vue";
 
 const showPopover = ref(false);
 
-const popoverEl = ref<HTMLElement | null>(null);
+const popoverEl = ref<any | null>(null);
 const onMouseOver = function (event: any) {
   showPopover.value = true;
   const triggerEl: HTMLElement = event.target;
   nextTick(() => {
-    let targetEl = popoverEl.value?.tooltipEl;
+    let targetEl = (popoverEl.value as { tooltipEl: HTMLElement }).tooltipEl;
     if (targetEl) {
       const popover: PopoverInterface = new Popover(
           targetEl,
@@ -18,7 +18,6 @@ const onMouseOver = function (event: any) {
       );
       popover.show();
     }
-
   })
 }
 

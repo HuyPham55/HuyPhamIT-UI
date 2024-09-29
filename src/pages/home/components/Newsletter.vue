@@ -30,7 +30,7 @@
               </div>
               <input id="member_email" class="block w-full px-3 py-4 pl-11 text-base text-gray-900 bg-white border border-gray-200 rounded-l-xl formkit-input focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder:text-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="email_address"
                      placeholder="Enter your email"
-                     required="" type="email"></div>
+                     :required="true" type="email"></div>
           </div>
           <div><input id="member_submit" class="formkit-submit formkit-submit w-full px-4 py-4 text-base font-medium text-center text-white bg-blue-700 dark:bg-blue-600 dark:border-blue-600 border border-blue-700 cursor-pointer rounded-r-xl formkit-submit hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 dark:hover:border-blue-700 dark:hover:bg-blue-700 dark:focus:ring-blue-800" data-element="submit"
                       type="submit"
