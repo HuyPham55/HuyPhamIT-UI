@@ -6,6 +6,10 @@ import SearchModal from "@/layout/components/SearchModal.vue";
 <template>
   <SearchModal/>
   <Header/>
-  <RouterView/>
+  <RouterView v-slot="{Component}">
+    <Transition name="fade-transform">
+      <Component :is="Component"/>
+    </Transition>
+  </RouterView>
   <Footer/>
 </template>

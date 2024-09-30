@@ -1,7 +1,10 @@
 <script lang="ts" setup>
-import {onMounted} from "vue";
+import {defineAsyncComponent, onMounted} from "vue";
 import {initFlowbite} from 'flowbite'
-import CommentSection from "@/pages/post-detail/components/CommentSection.vue";
+
+const CommentSection = defineAsyncComponent(() => {
+  return import("@/pages/post-detail/components/CommentSection.vue")
+})
 
 // initialize components based on data attribute selectors
 onMounted(() => {
