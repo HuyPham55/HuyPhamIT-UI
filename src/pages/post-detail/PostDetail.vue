@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import {defineAsyncComponent, onMounted, ref} from "vue";
-import {initFlowbite} from 'flowbite'
+// import {initFlowbite} from 'flowbite'
 import ArticleLoading from "./components/ArticleLoading.vue";
 import AsideLoading from "./components/AsideLoading.vue";
 
@@ -19,7 +19,7 @@ fetch();
 
 // initialize components based on data attribute selectors
 onMounted(() => {
-  initFlowbite();
+  // initFlowbite();
 })
 </script>
 
@@ -29,16 +29,28 @@ onMounted(() => {
       <div
         class="flex justify-between p-4 mx-2 lg:mx-auto max-w-screen-xl lg:p-10 dark:bg-gray-800 rounded-lg lg:rounded gap-8 flex-col lg:flex-row">
         <article v-if="!loading"
-          class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert xl:max-w-4xl order-1">
+                 class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert xl:max-w-4xl lg:order-1">
           <header class="mb-4 lg:mb-6 not-format">
             <div class="flex lg:items-center flex-col lg:flex-row justify-between">
               <div class="flex items-center mb-2 lg:mb-0">
-                <span>By &nbsp;</span>
-                <a class="font-bold dark:text-white hover:underline" href="#">Jese Leos</a>
-                <span class="ml-2 w-3 h-3 bg-gray-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-                <span class="ml-2">
-                  <time class="">August 3, 2022, 2:20am EDT</time>
-                </span>
+                <div>
+                  <span>By &nbsp;</span>
+                  <a class="font-bold dark:text-white hover:underline" href="#">Jese Leos</a>
+                </div>
+                <div class="flex items-center">
+                  <span
+                      class="ml-2 w-3 h-3 bg-gray-400 border-2 border-white dark:border-gray-800 rounded-full inline-block shrink-0"></span>
+                  <span class="ml-2 text-balance">
+                    <time class="">August 3, 2022, 2:20am EDT</time>
+                  </span>
+                </div>
+                <div class="flex items-center">
+                  <span
+                      class="ml-2 w-3 h-3 bg-gray-400 border-2 border-white dark:border-gray-800 rounded-full inline-block shrink-0"></span>
+                  <span class="ml-2 text-balance">
+                    12 min read
+                  </span>
+                </div>
               </div>
               <aside class="mb-2 lg:mb-0">
                 <div class="">

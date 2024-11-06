@@ -2,6 +2,7 @@
 
 import Pagination from "@/pages/home/components/components/Pagination.vue";
 import NewsItem from "@/pages/home/components/components/NewsItem.vue";
+import AngleDownIcon from "@/icons/AngleDownIcon.vue";
 
 // onMounted(() => {
 //   initFlowbite();
@@ -69,11 +70,7 @@ import NewsItem from "@/pages/home/components/components/NewsItem.vue";
                 <button id="actionsMenuDropdown2" class="flex w-full items-center justify-center rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700 sm:w-auto" data-dropdown-toggle="dropdownOrder2"
                         type="button">
                   More
-                  <svg aria-hidden="true" class="-me-0.5 ms-1.5 h-4 w-4" fill="none" height="24"
-                       viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="m19 9-7 7-7-7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                          stroke-width="2"/>
-                  </svg>
+                  <AngleDownIcon class="-me-0.5 ms-1.5 h-4 w-4"/>
                 </button>
                 <div id="dropdownOrder2"
                      class="z-10 hidden w-52 divide-y divide-gray-100 rounded-lg bg-white shadow dark:bg-gray-700"
