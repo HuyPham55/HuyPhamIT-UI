@@ -13,21 +13,29 @@ const routes = [
     {
         path: '/',
         component: Layout,
+        redirect: { name: 'home' },
         children: [
             {
-                path: '/',
+                path: '/home',
                 component: Home,
                 name: 'home',
             },
             {
-                path: '/post-detail', //Route paths should start with a "/": "post-detail" should be "/post-detail"
-                component: PostDetail,
-                name: 'post_detail',
-            },
-            {
-                path: '/post-list', //Route paths should start with a "/": "post-detail" should be "/post-detail"
-                component: PostIndex,
-                name: 'post_list',
+                path: '/posts', //Route paths should start with a "/": "post-detail" should be "/post-detail"
+                name: 'posts',
+                redirect: { name: 'post_list' },
+                children: [
+                    {
+                        path: '/list', //Route paths should start with a "/": "post-detail" should be "/post-detail"
+                        component: PostIndex,
+                        name: 'post_list',
+                    },
+                    {
+                        path: '/detail', //Route paths should start with a "/": "post-detail" should be "/post-detail"
+                        component: PostDetail,
+                        name: 'post_detail',
+                    },
+                ],
             },
             {
                 path: '/contact-us',
