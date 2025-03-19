@@ -7,7 +7,7 @@ import NotFound from "@/errors/NotFound.vue";
 import Login from "@/pages/auth/login/Login.vue";
 import Layout from "@/layout/Layout.vue";
 import AuthLayout from './layout/AuthLayout.vue';
-import Register from "@/pages/auth/login/register/Register.vue";
+import Register from "@/pages/auth/register/Register.vue";
 
 const routes = [
     {
