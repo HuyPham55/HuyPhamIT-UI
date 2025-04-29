@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import PostItemLoading from './components/PostItemLoading.vue';
+import PostItemLoading from "@/pages/post-index/components/components/PostItemLoading.vue";
 </script>
 
 <template>

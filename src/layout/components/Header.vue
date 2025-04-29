@@ -21,8 +21,6 @@ Search input on mobile devices that shows when user click on hamburger menu
 Directly related to showSearchButton
  */
 
-let showMobileSearchInput = 0;
-
 let showSearchForm = 0; //Show search input on header that always shows on desktop devices, automatically hidden on mobile device
 
 let computedLoggedIn = ref(false)

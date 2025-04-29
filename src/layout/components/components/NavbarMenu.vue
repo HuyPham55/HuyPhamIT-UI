@@ -1,5 +1,9 @@
 <script setup lang="ts">
-
+/*
+Search input on mobile devices that shows when user click on hamburger menu
+Directly related to showSearchButton
+ */
+let showMobileSearchInput = 0;
 </script>
 
 <template>
