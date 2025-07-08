@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const randomWidth = 75 - Math.random() * 20;
 </script>
 <template>

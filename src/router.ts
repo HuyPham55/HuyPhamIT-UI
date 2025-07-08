@@ -44,11 +44,17 @@ const routes = [
                 path: 'login',
                 component: Login,
                 name: 'login',
+                meta: {
+                    isAuth: true,
+                }
             },
             {
                 path: 'register',
                 component: Register,
                 name: 'register',
+                meta: {
+                    isAuth: true,
+                }
             },
         ]
     },
