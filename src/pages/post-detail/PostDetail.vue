@@ -110,6 +110,16 @@ onMounted(() => {
             </h1>
           </header>
           <div class="post-content">
+            <h2>
+              Laying the groundwork for best design
+            </h2>
+            <h3>Laying the groundwork for best design</h3>
+            <h4>
+              Laying the groundwork for best design
+            </h4>
+            <h5>
+              Laying the groundwork for best design
+            </h5>
             <p class="lead">Flowbite is an open-source library of UI components built with the utility-first
               classes from Tailwind CSS. It also includes interactive elements such as dropdowns, modals,
               datepickers.</p>
