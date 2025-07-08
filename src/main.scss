@@ -1,6 +1,6 @@
+@use "./scss/transitions";
+@use "./scss/navbar";
 @import "@fortawesome/fontawesome-free/css/all.css";
-@import "./scss/transitions";
-@import "./scss/navbar";
 
 @tailwind base;
 @tailwind components;
