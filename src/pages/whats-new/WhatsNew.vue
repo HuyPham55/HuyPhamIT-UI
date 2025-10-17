@@ -117,13 +117,15 @@ onMounted(function() {
     activeType = btn.getAttribute('data-type');
 
 
+    let normalStyleClasses = ['bg-gray-900', 'dark:bg-gray-100', 'text-white', 'dark:text-gray-900', 'shadow'];
+    let activeStyleClasses = ['bg-white', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-200', 'border-gray-200', 'dark:border-gray-700']
     // update chip styles
     for (const chip of $filters.querySelectorAll('.filter-chip')) {
-      chip.classList.remove('bg-gray-900', 'dark:bg-gray-100', 'text-white', 'dark:text-gray-900', 'shadow');
-      chip.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-200', 'border-gray-200', 'dark:border-gray-700');
+      chip.classList.remove(normalStyleClasses);
+      chip.classList.add(activeStyleClasses);
     }
-    btn.classList.remove('bg-white', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-200', 'border-gray-200', 'dark:border-gray-700');
-    btn.classList.add('bg-gray-900', 'dark:bg-gray-100', 'text-white', 'dark:text-gray-900', 'shadow');
+    btn.classList.remove(activeStyleClasses);
+    btn.classList.add(normalStyleClasses);
 
 
     render();
