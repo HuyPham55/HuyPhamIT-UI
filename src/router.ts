@@ -8,6 +8,7 @@ import Login from "@/pages/auth/login/Login.vue";
 import Layout from "@/layout/Layout.vue";
 import AuthLayout from './layout/AuthLayout.vue';
 import Register from "@/pages/auth/login/register/Register.vue";
+import WhatsNew from "@/pages/whats-new/WhatsNew.vue";
 
 const routes = [
     {
@@ -33,6 +34,11 @@ const routes = [
                 path: '/contact-us',
                 component: ContactUs,
                 name: 'contact_us',
+            },
+            {
+                path: '/whats-new',
+                component: WhatsNew,
+                name: 'whats_new',
             },
         ]
     },
