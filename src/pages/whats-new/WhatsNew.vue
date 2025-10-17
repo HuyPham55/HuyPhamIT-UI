@@ -43,10 +43,10 @@ onMounted(function() {
   const $search = document.getElementById('search');
 
   const typeMeta = {
-    release: {label: 'Release', cls: 'bg-blue-100 text-blue-800'},
-    feature: {label: 'Feature', cls: 'bg-emerald-100 text-emerald-800'},
-    bugfix: {label: 'Bug fix', cls: 'bg-rose-100 text-rose-800'},
-    tweak: {label: 'Tweak', cls: 'bg-amber-100 text-amber-800'}
+    release: {label: 'Release', cls: 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'},
+    feature: {label: 'Feature', cls: 'bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200'},
+    bugfix: {label: 'Bug fix', cls: 'bg-rose-100 dark:bg-rose-900 text-rose-800 dark:text-rose-200'},
+    tweak: {label: 'Tweak', cls: 'bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200'}
   };
 
 
@@ -110,20 +110,20 @@ onMounted(function() {
   }
 
 
-// chip click handling
+  // chip click handling
   $filters.addEventListener('click', (e) => {
     const btn = e.target.closest('button[data-type]');
     if (!btn) return;
     activeType = btn.getAttribute('data-type');
 
 
-// update chip styles
+    // update chip styles
     for (const chip of $filters.querySelectorAll('.filter-chip')) {
-      chip.classList.remove('bg-gray-900', 'text-white', 'shadow');
-      chip.classList.add('bg-white', 'text-gray-700', 'border-gray-200');
+      chip.classList.remove('bg-gray-900', 'dark:bg-gray-100', 'text-white', 'dark:text-gray-900', 'shadow');
+      chip.classList.add('bg-white', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-200', 'border-gray-200', 'dark:border-gray-700');
     }
-    btn.classList.remove('bg-white', 'text-gray-700', 'border-gray-200');
-    btn.classList.add('bg-gray-900', 'text-white', 'shadow');
+    btn.classList.remove('bg-white', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-200', 'border-gray-200', 'dark:border-gray-700');
+    btn.classList.add('bg-gray-900', 'dark:bg-gray-100', 'text-white', 'dark:text-gray-900', 'shadow');
 
 
     render();
@@ -151,8 +151,8 @@ onMounted(function() {
   <main class="max-w-3xl mx-auto p-4 sm:p-6">
     <!-- Title -->
     <header class="mb-6">
-      <h1 class="text-2xl font-semibold tracking-tight text-gray-900">What's new</h1>
-      <p class="mt-1 text-sm text-gray-600">Releases, features, bug fixes, tweaks & more — sorted by date (newest
+      <h1 class="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">What's new</h1>
+      <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Releases, features, bug fixes, tweaks & more — sorted by date (newest
         first).</p>
     </header>
 
@@ -162,23 +162,23 @@ onMounted(function() {
       <!-- Filter chips (Flowbite style) -->
       <div class="flex flex-wrap items-center gap-2" id="type-filters" aria-label="Filter by type">
         <button data-type="all"
-                class="filter-chip inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-medium transition bg-white text-gray-700 border-gray-200 shadow-sm hover:bg-gray-50">
+                class="filter-chip inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-medium transition bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-200 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700">
           All
         </button>
         <button data-type="release"
-                class="filter-chip inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-medium transition bg-white text-gray-700 border-gray-200 hover:bg-gray-50">
+                class="filter-chip inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-medium transition bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">
           Release
         </button>
         <button data-type="feature"
-                class="filter-chip inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-medium transition bg-white text-gray-700 border-gray-200 hover:bg-gray-50">
+                class="filter-chip inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-medium transition bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">
           Feature
         </button>
         <button data-type="bugfix"
-                class="filter-chip inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-medium transition bg-white text-gray-700 border-gray-200 hover:bg-gray-50">
+                class="filter-chip inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-medium transition bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">
           Bug fix
         </button>
         <button data-type="tweak"
-                class="filter-chip inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-medium transition bg-white text-gray-700 border-gray-200 hover:bg-gray-50">
+                class="filter-chip inline-flex items-center rounded-full border px-3 py-1.5 text-xs font-medium transition bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700">
           Tweak
         </button>
       </div>
@@ -197,7 +197,7 @@ onMounted(function() {
             </svg>
           </div>
           <input id="search" type="text"
-                 class="block w-full rounded-lg border border-gray-200 bg-white p-2.5 pl-9 text-sm text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500"
+                 class="block w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-2.5 pl-9 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:border-blue-500 focus:ring-blue-500"
                  placeholder="Search updates..."/>
         </div>
       </div>
@@ -210,7 +210,7 @@ onMounted(function() {
 
     <!-- Empty state -->
     <template id="empty-state">
-      <div class="rounded-xl border border-dashed border-gray-300 bg-white p-8 text-center text-sm text-gray-500">No
+      <div class="rounded-xl border border-dashed border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 text-center text-sm text-gray-500 dark:text-gray-400">No
         updates match your filters.
       </div>
     </template>
@@ -218,18 +218,18 @@ onMounted(function() {
 
     <!-- Item template -->
     <template id="item-template">
-      <article class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow transition">
+      <article class="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm hover:shadow dark:hover:shadow-md transition">
         <div class="flex items-start justify-between gap-3">
           <div>
-            <h3 class="text-base font-semibold text-gray-900 item-title"></h3>
+            <h3 class="text-base font-semibold text-gray-900 dark:text-white item-title"></h3>
             <div class="mt-1 flex flex-wrap items-center gap-2">
               <span class="inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-medium badge"></span>
-              <time class="text-xs text-gray-500 item-date" datetime=""></time>
+              <time class="text-xs text-gray-500 dark:text-gray-400 item-date" datetime=""></time>
             </div>
           </div>
           <!-- optional chevron; can convert to accordion if desired -->
         </div>
-        <div class="prose prose-sm max-w-none mt-3 text-gray-700 item-content"></div>
+        <div class="prose prose-sm dark:prose-invert max-w-none mt-3 text-gray-700 dark:text-gray-300 item-content"></div>
       </article>
     </template>
   </main>
